@@ -74,15 +74,33 @@ class Set {
     });
     return differenceSet;
   }
+
+  isSubsetOf(otherSet) {
+    if (this.size() > otherSet.size()) { 
+      return false;
+    }
+
+    let isSubset = true; 
+    this.values().every(value => { 
+      if (!otherSet.has(value)) { 
+        isSubset = false; 
+        return false;
+      }
+      return true; 
+    });
+    return isSubset;
+  }
 }
 
 const setA = new Set();
 const setB = new Set();
-setA.add(2);
 setA.add(1);
+setA.add(2);
 setA.add(3);
 
-setB.add(7);
+setB.add(2);
 setB.add(1);
 setB.add(3);
 setB.add(8);
+
+console.log(setA.isSubsetOf(setB))
