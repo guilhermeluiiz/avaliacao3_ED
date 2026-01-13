@@ -6,7 +6,7 @@ function defaultToString(item) {
     } else if (typeof item === 'string' || item instanceof String) {
         return `${item}`;
     }
-    return item.toString(); // {1}
+    return item.toString(); 
 }
 class ValuePair {
     constructor(key, value) {
@@ -21,8 +21,8 @@ class ValuePair {
 
 class Dictionary {
     constructor(toStrFn = defaultToString) {
-        this.toStrFn = toStrFn; // {1}
-        this.table = {}; // {2}
+        this.toStrFn = toStrFn; 
+        this.table = {}; 
     }
 
     hasKey(key) {
@@ -31,8 +31,8 @@ class Dictionary {
 
     set(key, value) {
         if (key != null && value != null) {
-            const tableKey = this.toStrFn(key); // {1}
-            this.table[tableKey] = new ValuePair(key, value); // {2}
+            const tableKey = this.toStrFn(key); 
+            this.table[tableKey] = new ValuePair(key, value); 
             return true;
         }
         return false;
@@ -66,11 +66,11 @@ class Dictionary {
     }
 
     forEach(callbackFn) {
-        const valuePairs = this.keyValues(); // {1}
-        for (let i = 0; i < valuePairs.length; i++) { // {2}
-            const result = callbackFn(valuePairs[i].key, valuePairs[i].value); // {3}
+        const valuePairs = this.keyValues(); 
+        for (let i = 0; i < valuePairs.length; i++) { 
+            const result = callbackFn(valuePairs[i].key, valuePairs[i].value); 
             if (result === false) {
-                break; // {4}
+                break; 
             }
         }
     }
@@ -92,11 +92,11 @@ class Dictionary {
             return '';
         }
         const valuePairs = this.keyValues();
-        let objString = `${valuePairs[0].toString()}`; // {1}
+        let objString = `${valuePairs[0].toString()}`; 
         for (let i = 1; i < valuePairs.length; i++) {
-            objString = `${objString},${valuePairs[i].toString()}`; // {2}
+            objString = `${objString},${valuePairs[i].toString()}`; 
         }
-        return objString; // {3}
+        return objString; 
     }
 
 }
