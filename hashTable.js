@@ -86,10 +86,13 @@ class HashTable {
     }
 }
 
-const teste = new HashTable()
-teste.put('Heitor', 'heitor@gmail.com')
-teste.put('Tiago', 'tiago@123.com')
-teste.put('Sue', 'sue@email.com')
-teste.put('Jamie', 'jamie@email.com')
-
-console.log(teste.toString())
+const hash = new HashTable();
+hash.put('Gandalf', 'gandalf@email.com');
+hash.put('John', 'johnsnow@email.com');
+hash.put('Tyrion', 'tyrion@email.com');
+console.log(hash.hashCode('Gandalf'));
+console.log(hash.get('Gandalf')); // gandalf@email.com
+console.log(hash.get('Loiane')); // undefined
+hash.remove('Gandalf');
+console.log(hash.get('Gandalf'));
+console.log(hash.toString());
