@@ -87,8 +87,8 @@ class HashTable {
 }
 
 const teste = new HashTable()
-teste.put('ludsa', 'ludsa@gmail.com')
-teste.put('joao vittar', 'juao@123.com')
+teste.put('Heitor', 'heitor@gmail.com')
+teste.put('Tiago', 'tiago@123.com')
 teste.put('Sue', 'sue@email.com')
 teste.put('Jamie', 'jamie@email.com')
 
